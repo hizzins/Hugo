@@ -1,4 +1,4 @@
-baseurl = "https://github.com/hizzins"
+baseurl = "https://hizzins.github.io/Notes/"
 title = "Hizzin's Notes"
 
 theme = "hugo-coder"
@@ -23,7 +23,7 @@ disqusShortname = "yourdiscussshortname"
     avatarurl = "https://user-images.githubusercontent.com/43326846/55297372-5c153c80-5460-11e9-9246-2cd6fd122686.png"
     footercontent = "Copyright(c)2019 신희진 All rights reserved. "
 
-    dateformat = "January 2, 2006"
+    dateformat = "2006-01-02"
 
     hideCredits = true
     hideCopyright = true
