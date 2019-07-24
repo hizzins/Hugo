@@ -20,7 +20,7 @@ disqusShortname = "yourdiscussshortname"
     description = "Heejin's personal website"
     keywords = "blog,developer,personal"
     info = "Front-end Web developer"
-    avatarurl = "https://user-images.githubusercontent.com/43326846/55297372-5c153c80-5460-11e9-9246-2cd6fd122686.png"
+    avatarurl = "images/effel.jpg"
     footercontent = "Copyright(c)2019 신희진 All rights reserved. "
 
     dateformat = "2006-01-02"
