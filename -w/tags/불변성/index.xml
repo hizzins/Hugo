@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>불변성 on Hizzin&#39;s Notes</title>
+    <link>http://localhost:1313/Notes/tags/%EB%B6%88%EB%B3%80%EC%84%B1/</link>
+    <description>Recent content in 불변성 on Hizzin&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 31 May 2019 16:18:27 +0900</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/Notes/tags/%EB%B6%88%EB%B3%80%EC%84%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>immer.js</title>
+      <link>http://localhost:1313/Notes/post/20190531/</link>
+      <pubDate>Fri, 31 May 2019 16:18:27 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20190531/</guid>
+      <description>리액트의 상태를 불변하게 관리하는데 유용한 라이브러리입니다. 따로 학습할 필요없이 평상시 값을 변경하듯이 변경하는 코드를 produce함수로 감싸주기만 하면 됩니다.
+불변성 먼저 immer.js를 사용하기 전에 불변성이라는 것에 대해 알아야 합니다. 리액트에서는 불변성에 대해 많이 강조합니다. state값이나 props값을 비교하여 값이 변경된 경우에만 컴포넌트를 리렌더링해줍니다. 이때 리액트는 성능을 위해 얕은비교를 통해 값이 변경되었는지를 확인합니다. 참조로 인해 값이 변경되는 경우 값이 변경된 것을 인지하지 못합니다. 따라서 기존의 state의 값을 직접 변경하는 것이 아닌 spread문법 혹은 Object.</description>
+    </item>
+    
+  </channel>
+</rss>

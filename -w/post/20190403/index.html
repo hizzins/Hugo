@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Shin Heejin">
+    <meta name="description" content="Heejin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo 블로그 만들기"/>
+<meta name="twitter:description" content="Hugo 설치하기  hugo github에서 설치파일 다운로드 및 설치해 주세요. 다운로드 받은 hugo 파일(hugo.exe, README.md, LICENSE.md들을 C:\Hugo\bin 디렉토리 생성후 넣어주세요. 어느 위치에서나 Hugo가 실행될 수 있도록$ set PATH=%PATH%;C:\Hugo\bin 명령으로 환경변수에 C:\Hugo\bin을 추가해 줍니다. $ hugo version 혹은 $ hugo help 명령어로 hugo가 잘 설치됐는지 확인할 수 있어요.  프로젝트 만들기  C:\Hugo에서 $ hugo new site &lt;project&gt; 명령어를 치면 으로 생성된 폴더를 확인할 수 있어요.
+ 폴더의 구조는 아래처럼 자동으로 생성이 됩니다."/>
+
+    <meta property="og:title" content="Hugo 블로그 만들기" />
+<meta property="og:description" content="Hugo 설치하기  hugo github에서 설치파일 다운로드 및 설치해 주세요. 다운로드 받은 hugo 파일(hugo.exe, README.md, LICENSE.md들을 C:\Hugo\bin 디렉토리 생성후 넣어주세요. 어느 위치에서나 Hugo가 실행될 수 있도록$ set PATH=%PATH%;C:\Hugo\bin 명령으로 환경변수에 C:\Hugo\bin을 추가해 줍니다. $ hugo version 혹은 $ hugo help 명령어로 hugo가 잘 설치됐는지 확인할 수 있어요.  프로젝트 만들기  C:\Hugo에서 $ hugo new site &lt;project&gt; 명령어를 치면 으로 생성된 폴더를 확인할 수 있어요.
+ 폴더의 구조는 아래처럼 자동으로 생성이 됩니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/Notes/post/20190403/" /><meta property="article:published_time" content="2019-04-03T14:50:24&#43;09:00"/>
+<meta property="article:modified_time" content="2019-04-03T14:50:24&#43;09:00"/>
+
+
+    
+      <base href="http://localhost:1313/Notes/post/20190403/">
+    
+    <title>
+  Hugo 블로그 만들기 · Hizzin&#39;s Notes
+</title>
+
+    
+      <link rel="canonical" href="http://localhost:1313/Notes/post/20190403/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="http://localhost:1313/Notes/" media="screen">
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.49.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://localhost:1313/Notes/">
+      Hizzin&#39;s Notes
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://localhost:1313/Notes/post/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hizzins.github.io/playground">Playground</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  
+<section class="container page">
+  <article>
+    <header>
+      <ul id="tags">
+        
+          
+          
+            <li><a href="http://localhost:1313/Notes/tags/blog/">blog</a></li>
+          
+        
+          
+          
+            <li><a href="http://localhost:1313/Notes/tags/hugo/">hugo</a></li>
+          
+        
+      </ul>
+      <h1>Hugo 블로그 만들기</h1>
+    </header>
+
+    
+
+<h3 id="hugo-설치하기">Hugo 설치하기</h3>
+
+<ol>
+<li><a href="https://github.com/gohugoio/hugo/releases">hugo github</a>에서 설치파일 다운로드 및 설치해 주세요.</li>
+<li>다운로드 받은 hugo 파일(hugo.exe, README.md, LICENSE.md들을 C:\Hugo\bin 디렉토리 생성후 넣어주세요.</li>
+<li>어느 위치에서나 Hugo가 실행될 수 있도록<code>$ set PATH=%PATH%;C:\Hugo\bin</code>  명령으로 환경변수에  <code>C:\Hugo\bin</code>을 추가해 줍니다.</li>
+<li><code>$ hugo version</code>  혹은  <code>$ hugo help</code> 명령어로 hugo가 잘 설치됐는지 확인할 수 있어요.</li>
+</ol>
+
+<h3 id="프로젝트-만들기">프로젝트 만들기</h3>
+
+<ol>
+<li><p><code>C:\Hugo</code>에서 <code>$ hugo new site &lt;project&gt;</code> 명령어를 치면 <project>으로 생성된 폴더를 확인할 수 있어요.</p></li>
+
+<li><p><project>폴더의 구조는 아래처럼 자동으로 생성이 됩니다.<br />
+├─archetypes<br />
+├─content<br />
+├─data<br />
+├─layouts<br />
+├─static<br />
+└─themes<br />
+config.toml</p></li>
+</ol>
+
+<blockquote>
+<p>config.toml파일은 블로그의 모든 설정을 하는 파일로 가장 중요.</p>
+</blockquote>
+
+<h3 id="theme-적용하기-hugo-coder">theme 적용하기(hugo-coder)</h3>
+
+<p>먼저 hugo의 다양한 테마는 <a href="https://themes.gohugo.io/">hugo 테마 사이트</a>에서 확인하고 마음에 드는걸로 고르면 됩니다.
+저는 그냥 상단에 있는 적당한 걸로 <a href="https://github.com/luizdepra/hugo-coder">hugo-coder 테마</a>를 적용해 볼게요.</p>
+
+<ol>
+<li><p><project>폴더에서 <code>$git init</code> 명령어로 git 환경을 만들어줍니다.</p></li>
+
+<li><p><code>$git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder</code> 명령어로 테마를 받아주세요.  그러면 themes폴더안에 hugo-coder폴더가 자동으로 생성이 되요.</p></li>
+
+<li><p>blog폴더 안에 config.toml파일을 열어서 설정을 해줍니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">baseURL = &lt;git주소&gt;
+languageCode = <span style="color:#0ff;font-weight:bold">&#34;ko&#34;</span>  
+title = &lt;title&gt;
+theme = <span style="color:#0ff;font-weight:bold">&#34;hugo-coder&#34;</span>
+</code></pre></div></li>
+
+<li><p>자, 여기까지 하고 페이지를 한번 띄워 볼게요.
+먼저,  <a href="https://github.com/hizzins/Hugo/files/3021908/hugo_extended_0.49.2_Windows-64bit.zip%22">hugo_extended_0.49.2_Windows-64bit</a>를 다운로드 받아서  <code>C:\Hugo\bin</code> 이곳에 있는 파일들을 바꿔주세요.
+처음에 테마 적용하고 hugo 서버를 띄웠더니 아래와 같은 에러가 나서 검색해본 결과 위의 방법으로 해결이 됐어요.
+<code>error: failed to transform resource: TOCSS: failed to transform &quot;style.coder.css&quot; (text/x-scss): this feature is not available in your current Hugo version</code></p></li>
+
+<li><p>그리고  <code>$ hugo serve -w -D</code> 라고 명령어를 치면 localhost:1313으로 페이지를 띄울 수 있어요.
+처음엔 아무것도 없고 최상단에 title하고 푸터만 나와요.</p></li>
+
+<li><p>blog디렉토리에 있는 config.toml파일을 hugo-coder에서 제공해주는 <a href="https://github.com/luizdepra/hugo-coder/blob/master/exampleSite/config.toml">파일</a>로 수정하고 확인하면 상단에 메뉴와 센터에 프로필이미지등 완성된 페이지를 볼 수 있습니다.</p></li>
+</ol>
+
+<h3 id="페이지-구성">페이지 구성</h3>
+
+<ol>
+<li><p><code>$hugo new post/test.md</code>  명령어를 치면 C:\Hugo\blog\conent\post\test.md 가 생성된 것을 확인할 수 있어요.</p></li>
+
+<li><p>파일을 열어서 보면 상단에 기본 정보(title, date, draft)가 자동으로 생성되 있어요.</p></li>
+
+<li><p>이제 <a href="https://github.com/luizdepra/hugo-coder/wiki/Configurations#complete-example">configurations</a>를 참고해서 config.toml파일을 원하는대로 수정해서 블로그를 구성하시면 됩니다.</p></li>
+</ol>
+
+<h3 id="git-페이지-연동">git 페이지 연동</h3>
+
+<ol>
+<li><p>먼저 git에 새로운 repository를  두개 생성합니다.
+하나는 hugo 블로그 생성기 프로젝트이며 하나는 배포버전의 정적 소스만 올라가는 프로젝트로 저의 경우 Notes(정적 소스)와 Hugo(블로그 생성기) 이렇게 두개의 repository를 만들었어요.</p></li>
+
+<li><p>로컬 프로젝트에서 blog 폴더와 public 폴더에서 git init을 해주고요.
+blog폴더는 git의 Hugo 저장소에 연결하고 public폴더는 Notes저장소와 연결해주세요.
+그리고 config.toml의 baseurl 옵션값을 Notes저장소 url로 넣어주세요.</p></li>
+
+<li><p>포스트를 하나 작성하고 <code>$hugo</code> 명령어로 빌드 후 /public/post폴더에 잘 배포가 됐는지 확인합니다. 이때 draft옵션이 true로 되어 있으면 배포가 되지 않으니 false로 수정해서 배포합니다.</p></li>
+
+<li><p>blog와 public 모두 원격저장소에 commit, push 해줍니다.</p></li>
+
+<li><p>Notes repository에 setting으로 가서 Github pages부분 설정에서 source를 master branch로 설정하면 git page가 생성되고 배포한 블로그를 확인하실 수 있어요.</p></li>
+</ol>
+
+<h3 id="tag-기능">tag 기능</h3>
+
+<p>tag 기능 구현하는 방법을 간단하게 소개하겠습니다.
+먼저 config.toml파일을 열어서 [taxonomies]항목에 tag가 있는지 확인해 주세요. 없다면 아래와 같이 추가해주세요.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[taxonomies]  
+  tag = <span style="color:#0ff;font-weight:bold">&#34;tags&#34;</span>
+</code></pre></div>
+<p>themes/hugo-coder/layouts/partials 폴더에 가서 태그를 구현하고자 하는 파일에 tag데이터를 그려주면 됩니다. 저는 각 페이지별로 상단부분에 태그를 보여주기위해 page.html파일에 구현했습니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{{ $taxo := <span style="color:#0ff;font-weight:bold">&#34;tags&#34;</span> }}
+&lt;ul id=<span style="color:#0ff;font-weight:bold">&#34;{{ $taxo }}&#34;</span>&gt;  
+  {{ range .Param $taxo }}  
+    {{ $name := . }}  
+    {{ <span style="color:#fff;font-weight:bold">with</span> $.Site.GetPage (printf <span style="color:#0ff;font-weight:bold">&#34;/%s/%s&#34;</span> $taxo ($name | urlize)) }}  
+      &lt;li&gt;&lt;a href=<span style="color:#0ff;font-weight:bold">&#34;{{ .Permalink }}&#34;</span>&gt;{{ $name }}&lt;<span style="color:#f00">/a&gt;&lt;/li&gt;  </span>
+    {{ end }}  
+  {{ end }}  
+&lt;<span style="color:#f00">/ul&gt;</span>
+</code></pre></div>
+<p>post작성시에 상단에 원하는 태그를 배열형태로 넣어주세요.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">---  
+title: <span style="color:#0ff;font-weight:bold">&#34;Hugo 블로그 만들기&#34;</span>  
+date: <span style="color:#ff0;font-weight:bold">2019</span>-<span style="color:#ff0;font-weight:bold">04</span>-<span style="color:#ff0;font-weight:bold">03</span>T14:<span style="color:#ff0;font-weight:bold">50</span>:<span style="color:#ff0;font-weight:bold">24</span>+<span style="color:#ff0;font-weight:bold">09</span>:<span style="color:#ff0;font-weight:bold">00</span>  
+draft: <span style="color:#fff;font-weight:bold">false</span>
+tags: [<span style="color:#0ff;font-weight:bold">&#34;blog&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;hugo&#34;</span>]  
+---
+</code></pre></div>
+<p>build 후 페이지 띄워서 확인하면 작성한 태그들을 볼 수 있습니다.
+themes/hugo-coder/assets폴더 안에 scss파일에 스타일을 추가해서 UI는 원하는대로 구현하실 수 있어요.<br />
+/tags/${태그이름}으로 접근하면 해당태그의 블로그 리스트들을 볼 수 있습니다.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Copyright(c)2019 신희진 All rights reserved. </p>
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Hizzin&#39;s Notes</title>
+    <link>http://localhost:1313/Notes/tags/react/</link>
+    <description>Recent content in React on Hizzin&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 17 May 2019 01:43:11 +0900</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/Notes/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Storybook (for React)</title>
+      <link>http://localhost:1313/Notes/post/20190517/</link>
+      <pubDate>Fri, 17 May 2019 01:43:11 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20190517/</guid>
+      <description>스토리북은 단순히 UI템플릿을 보여주는 데모페이지가 아닌 UI테스트부터 문서화까지 다양한 기능들이 제공되어 보다 쾌적한 컴포넌트 개발환경을 만들어주는 도구입니다. 스토리북을 사용할때는 처음 컴포넌트 작성할때부터 props로만 UI를 그릴 수 있는 의존성이 없는 독립적인 컴포넌트로 설계하여 구현하도록 합니다.
+ 스토리북이 지원하는 프레임워크 목록
+ 작업 준비  먼저 아래 명령어로 리액트 프로젝트를 만들어주세요
+npx create-react-app storybook   npx명령어는 npm v5.2.0이상에서 사용할 수 있으며,
+패키지를 설치하지 않고 실행만 시킬 수 있다. nvm, n 처럼 node 버전관리를 할 수 있다.</description>
+    </item>
+    
+  </channel>
+</rss>

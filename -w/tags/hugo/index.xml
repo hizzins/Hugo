@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Hizzin&#39;s Notes</title>
+    <link>http://localhost:1313/Notes/tags/hugo/</link>
+    <description>Recent content in Hugo on Hizzin&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 Apr 2019 14:50:24 +0900</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/Notes/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo 블로그 만들기</title>
+      <link>http://localhost:1313/Notes/post/20190403/</link>
+      <pubDate>Wed, 03 Apr 2019 14:50:24 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20190403/</guid>
+      <description>Hugo 설치하기  hugo github에서 설치파일 다운로드 및 설치해 주세요. 다운로드 받은 hugo 파일(hugo.exe, README.md, LICENSE.md들을 C:\Hugo\bin 디렉토리 생성후 넣어주세요. 어느 위치에서나 Hugo가 실행될 수 있도록$ set PATH=%PATH%;C:\Hugo\bin 명령으로 환경변수에 C:\Hugo\bin을 추가해 줍니다. $ hugo version 혹은 $ hugo help 명령어로 hugo가 잘 설치됐는지 확인할 수 있어요.  프로젝트 만들기  C:\Hugo에서 $ hugo new site &amp;lt;project&amp;gt; 명령어를 치면 으로 생성된 폴더를 확인할 수 있어요.
+ 폴더의 구조는 아래처럼 자동으로 생성이 됩니다.</description>
+    </item>
+    
+  </channel>
+</rss>

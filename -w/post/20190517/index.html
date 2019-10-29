@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Shin Heejin">
+    <meta name="description" content="Heejin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Storybook (for React)"/>
+<meta name="twitter:description" content="스토리북은 단순히 UI템플릿을 보여주는 데모페이지가 아닌 UI테스트부터 문서화까지 다양한 기능들이 제공되어 보다 쾌적한 컴포넌트 개발환경을 만들어주는 도구입니다. 스토리북을 사용할때는 처음 컴포넌트 작성할때부터 props로만 UI를 그릴 수 있는 의존성이 없는 독립적인 컴포넌트로 설계하여 구현하도록 합니다.
+ 스토리북이 지원하는 프레임워크 목록
+ 작업 준비  먼저 아래 명령어로 리액트 프로젝트를 만들어주세요
+npx create-react-app storybook   npx명령어는 npm v5.2.0이상에서 사용할 수 있으며,
+패키지를 설치하지 않고 실행만 시킬 수 있다. nvm, n 처럼 node 버전관리를 할 수 있다."/>
+
+    <meta property="og:title" content="Storybook (for React)" />
+<meta property="og:description" content="스토리북은 단순히 UI템플릿을 보여주는 데모페이지가 아닌 UI테스트부터 문서화까지 다양한 기능들이 제공되어 보다 쾌적한 컴포넌트 개발환경을 만들어주는 도구입니다. 스토리북을 사용할때는 처음 컴포넌트 작성할때부터 props로만 UI를 그릴 수 있는 의존성이 없는 독립적인 컴포넌트로 설계하여 구현하도록 합니다.
+ 스토리북이 지원하는 프레임워크 목록
+ 작업 준비  먼저 아래 명령어로 리액트 프로젝트를 만들어주세요
+npx create-react-app storybook   npx명령어는 npm v5.2.0이상에서 사용할 수 있으며,
+패키지를 설치하지 않고 실행만 시킬 수 있다. nvm, n 처럼 node 버전관리를 할 수 있다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/Notes/post/20190517/" /><meta property="article:published_time" content="2019-05-17T01:43:11&#43;09:00"/>
+<meta property="article:modified_time" content="2019-05-17T01:43:11&#43;09:00"/>
+
+
+    
+      <base href="http://localhost:1313/Notes/post/20190517/">
+    
+    <title>
+  Storybook (for React) · Hizzin&#39;s Notes
+</title>
+
+    
+      <link rel="canonical" href="http://localhost:1313/Notes/post/20190517/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="http://localhost:1313/Notes/" media="screen">
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.49.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://localhost:1313/Notes/">
+      Hizzin&#39;s Notes
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://localhost:1313/Notes/post/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hizzins.github.io/playground">Playground</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  
+<section class="container page">
+  <article>
+    <header>
+      <ul id="tags">
+        
+          
+          
+            <li><a href="http://localhost:1313/Notes/tags/react/">react</a></li>
+          
+        
+          
+          
+            <li><a href="http://localhost:1313/Notes/tags/storybook/">storybook</a></li>
+          
+        
+      </ul>
+      <h1>Storybook (for React)</h1>
+    </header>
+
+    
+
+<p>스토리북은 단순히 UI템플릿을 보여주는 데모페이지가 아닌 UI테스트부터 문서화까지 다양한 기능들이 제공되어 보다 쾌적한 컴포넌트 개발환경을 만들어주는 도구입니다.
+스토리북을 사용할때는 처음 컴포넌트 작성할때부터 props로만 UI를 그릴 수 있는 의존성이 없는 독립적인 컴포넌트로 설계하여 구현하도록 합니다.</p>
+
+<blockquote>
+<p><a href="[https://github.com/storybooks/storybook/tree/master/app](https://github.com/storybooks/storybook/tree/master/app)">스토리북이 지원하는 프레임워크 목록</a></p>
+</blockquote>
+
+<h2 id="작업-준비">작업 준비</h2>
+
+<ol>
+<li><p>먼저 아래 명령어로 리액트 프로젝트를 만들어주세요</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">npx create-react-app storybook
+</code></pre></div>
+<blockquote>
+<p>npx명령어는 npm v5.2.0이상에서 사용할 수 있으며,<br />
+패키지를 설치하지 않고 실행만 시킬 수 있다.
+nvm, n 처럼 node 버전관리를 할 수 있다.</p>
+</blockquote></li>
+
+<li><p>스토리북 cli를 설치해주세요.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">npx -p <span style="color:#f00">@</span>storybook<span style="color:#f00">/cli sb init --type react</span>
+</code></pre></div>
+<p>이렇게 두가지 작업을 해주면 필요한 모듈들이 자동으로 설치되며 package.json에 scripts 명령어도 자동으로 등록되어  <code>npm run storybook</code> 명령어를 이용해 사이트를 띄울 수 있습니다.</p></li>
+</ol>
+
+<p>.storybook에는 설정 관련 파일이 있고 stories폴더에는 실제로 컴포넌트를 구성하는 코드를 작성하는 파일이 들어있습니다.</p>
+
+<h2 id="sass-설정">sass 설정</h2>
+
+<p>sass 사용시  storybook의 webpack 설정이 추가로 필요합니다.
+.storybook폴더에 webpack.config.js파일을 아래의 내용으로 추가해 주세요.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#fff;font-weight:bold">const</span> path = require(<span style="color:#0ff;font-weight:bold">&#39;path&#39;</span>);  
+<span style="color:#007f7f">// Export a function. Accept the base config as the only param.  
+</span><span style="color:#007f7f"></span>module.exports = <span style="color:#fff;font-weight:bold">async</span> ({ config, mode }) =&gt; {  
+  config.module.rules.push({  
+    test: <span style="color:#0ff;font-weight:bold">/\.scss$/</span>,  
+    use: [<span style="color:#0ff;font-weight:bold">&#39;style-loader&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;css-loader&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;sass-loader&#39;</span>],  
+    include: path.resolve(__dirname, <span style="color:#0ff;font-weight:bold">&#39;../&#39;</span>),  
+  });  
+  <span style="color:#007f7f">// Return the altered config  
+</span><span style="color:#007f7f"></span>  <span style="color:#fff;font-weight:bold">return</span> config;  
+};
+</code></pre></div>
+<p>sass외에도 webpack 설정이 더 필요하다면 추가로 작성해주시면 됩니다.</p>
+
+<h2 id="작성-방법">작성 방법</h2>
+
+<p>stories폴더에 index.stories.js파일을 한번 열어보면 아래와 같이 데모 코드가 기본으로 작성되어 있습니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#fff;font-weight:bold">import</span> React from <span style="color:#0ff;font-weight:bold">&#39;react&#39;</span>;  
+  
+<span style="color:#fff;font-weight:bold">import</span> { storiesOf } from <span style="color:#0ff;font-weight:bold">&#39;@storybook/react&#39;</span>;  
+<span style="color:#fff;font-weight:bold">import</span> { action } from <span style="color:#0ff;font-weight:bold">&#39;@storybook/addon-actions&#39;</span>;  
+<span style="color:#fff;font-weight:bold">import</span> { linkTo } from <span style="color:#0ff;font-weight:bold">&#39;@storybook/addon-links&#39;</span>;  
+  
+<span style="color:#fff;font-weight:bold">import</span> { Button, Welcome } from <span style="color:#0ff;font-weight:bold">&#39;@storybook/react/demo&#39;</span>;  
+  
+storiesOf(<span style="color:#0ff;font-weight:bold">&#39;Welcome&#39;</span>, module).add(<span style="color:#0ff;font-weight:bold">&#39;to Storybook&#39;</span>, () =&gt; &lt;Welcome showApp={linkTo(<span style="color:#0ff;font-weight:bold">&#39;Button&#39;</span>)} <span style="color:#f00">/&gt;);  </span>
+  
+storiesOf(<span style="color:#0ff;font-weight:bold">&#39;Button&#39;</span>, module)  
+  .add(<span style="color:#0ff;font-weight:bold">&#39;with text&#39;</span>, () =&gt; &lt;Button onClick={action(<span style="color:#0ff;font-weight:bold">&#39;clicked&#39;</span>)}&gt;Hello Button&lt;<span style="color:#f00">/Button&gt;)  </span>
+  .add(<span style="color:#0ff;font-weight:bold">&#39;with some emoji&#39;</span>, () =&gt; (  
+    &lt;Button onClick={action(<span style="color:#0ff;font-weight:bold">&#39;clicked&#39;</span>)}&gt;  
+      &lt;span role=<span style="color:#0ff;font-weight:bold">&#34;img&#34;</span> aria-label=<span style="color:#0ff;font-weight:bold">&#34;so cool&#34;</span>&gt;  
+        <span style="color:#f00">😀</span> <span style="color:#f00">😎</span> <span style="color:#f00">👍</span> <span style="color:#f00">💯</span>  
+      &lt;<span style="color:#f00">/span&gt;  </span>
+    &lt;<span style="color:#f00">/Button&gt;  </span>
+  ));
+</code></pre></div>
+<p>storiesOf의 첫번째 파라미터로는 스트링값을 넘겨주는데이 값은 스토리북 뷰페이지에서 왼쪽에 메뉴를 표현해줍니다.
+&lsquo;button/success&rsquo;처럼 슬래쉬로 폴더를 구성할 수도 있습니다.
+두번째 파라미터인 module은 HMR기능을 사용할 수 있게 해줘서 페이지 새로고침없이 화면을 갱신하는데 필요합니다.
+storiesOf()는 객체를 반환해 체이닝형태로 add(이름, 컴포넌트를 리턴하는 함수) 메서드를 호출할 수 있으며 스토리북 뷰에서 리턴된 컴포넌트를 확인할 수 있습니다.</p>
+
+<h2 id="decorator-추가">decorator 추가</h2>
+
+<p>컴포넌트에 래퍼가 필요한 경우 데코레이터를 만들어 사용할 수 있습니다. 예를 들어 인라인 요소의 컴포넌트를 페이지의 가운데 보여주고 싶은 경우 래퍼를 통해 위치를 조정할 수 있습니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">storiesOf(<span style="color:#0ff;font-weight:bold">&#39;Input&#39;</span>, module)
+.addDecorator((story) =&gt; &lt;div style={{ margin: <span style="color:#0ff;font-weight:bold">&#39;50px&#39;</span>}} &gt;{story()}&lt;<span style="color:#f00">/div&gt;)</span>
+.add(<span style="color:#0ff;font-weight:bold">&#39;default&#39;</span>, () =&gt; &lt;Input onChange={action(<span style="color:#0ff;font-weight:bold">&#39;changed&#39;</span>)}<span style="color:#f00">/&gt;)</span>
+.add(<span style="color:#0ff;font-weight:bold">&#39;disabled&#39;</span>, () =&gt; &lt;Input disabled<span style="color:#f00">/&gt;)</span>
+</code></pre></div>
+<p>또다른 방법으로는 addDecorator메서드를 사용하여 모든 스토리에 공통으로 적용시킬 수 있습니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#fff;font-weight:bold">import</span> { storiesOf, addDecorator } from <span style="color:#0ff;font-weight:bold">&#39;@storybook/react&#39;</span>;
+<span style="color:#fff;font-weight:bold">const</span> wrapperStyle = {  
+  padding: <span style="color:#0ff;font-weight:bold">&#39;50px&#39;</span>,  
+};  
+<span style="color:#fff;font-weight:bold">const</span> wrapperDecorator = storyFn =&gt; &lt;div style={wrapperStyle}&gt;{storyFn()}&lt;<span style="color:#f00">/div&gt;;</span>
+addDecorator(wrapperDecorator);
+</code></pre></div>
+<h2 id="addons">addons</h2>
+
+<p>사용할 addons을 선택해서 dev옵션으로 설치 후 .storybook/addons.js파일을 열어서 아래와 같이 addons 모듈을 import 해주면 해당 addons을 사용할 수 있습니다.  이곳에서 작성한 순서는 탭의 순서에 그대로 적용됩니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#fff;font-weight:bold">import</span>  <span style="color:#0ff;font-weight:bold">&#39;@storybook/addon-actions/register&#39;</span>; 
+<span style="color:#fff;font-weight:bold">import</span>  <span style="color:#0ff;font-weight:bold">&#39;@storybook/addon-knobs/register&#39;</span>;
+</code></pre></div>
+<h3 id="knobs-https-github-com-storybooks-storybook-tree-master-addons-knobs"><a href="https://github.com/storybooks/storybook/tree/master/addons/knobs">Knobs</a></h3>
+
+<p>이 기능은 상태에 따라 동적으로 바뀌는 컴포넌트용으로 사용자가 값을 바로바로 바꿔서 테스트할 수 있는 기능입니다.
+<a href="[https://lonelyplanet.github.io/backpack-ui/?knob-Title=Global%20news%20reporter&amp;knob-Name=Alex%20Butler&amp;knob-Alternate%20text=Rizzo&amp;knob-Username=Rizzo%20the%20Rat&amp;knob-Image%20source=http%3A%2F%2Fimg2.wikia.nocookie.net%2F__cb20111018235020%2Fmuppet%2Fimages%2Fthumb%2F1%2F14%2FRizzo11.png%2F300px-Rizzo11.png&amp;knob-Size=80&amp;knob-URL=%2Fprofile&amp;knob-Orientation=vertical&amp;knob-Avatar%20image%20URL=https%3A%2F%2Fassets.staticlp.com%2Fprofiles%2Fusers%2Fplaceholders%2Flarge.png&amp;knob-Avatar%20URL=http%3A%2F%2Fimg2.wikia.nocookie.net%2F__cb20111018235020%2Fmuppet%2Fimages%2Fthumb%2F1%2F14%2FRizzo11.png%2F300px-Rizzo11.png&amp;selectedKind=Authors&amp;selectedStory=Article%20author&amp;full=0&amp;addons=1&amp;stories=1&amp;panelRight=0&amp;addonPanel=storybooks%2Fstorybook-addon-knobs](https://lonelyplanet.github.io/backpack-ui/?knob-Title=Global%20news%20reporter&amp;knob-Name=Alex%20Butler&amp;knob-Alternate%20text=Rizzo&amp;knob-Username=Rizzo%20the%20Rat&amp;knob-Image%20source=http%3A%2F%2Fimg2.wikia.nocookie.net%2F__cb20111018235020%2Fmuppet%2Fimages%2Fthumb%2F1%2F14%2FRizzo11.png%2F300px-Rizzo11.png&amp;knob-Size=80&amp;knob-URL=%2Fprofile&amp;knob-Orientation=vertical&amp;knob-Avatar%20image%20URL=https%3A%2F%2Fassets.staticlp.com%2Fprofiles%2Fusers%2Fplaceholders%2Flarge.png&amp;knob-Avatar%20URL=http%3A%2F%2Fimg2.wikia.nocookie.net%2F__cb20111018235020%2Fmuppet%2Fimages%2Fthumb%2F1%2F14%2FRizzo11.png%2F300px-Rizzo11.png&amp;selectedKind=Authors&amp;selectedStory=Article%20author&amp;full=0&amp;addons=1&amp;stories=1&amp;panelRight=0&amp;addonPanel=storybooks%2Fstorybook-addon-knobs)">데모 페이지</a>를 통해서 확인해보면 어떤 기능인지 금방 알 수 있습니다.</p>
+
+<h4 id="사용방법">사용방법</h4>
+
+<p>addons.js에  &lsquo;@storybook/addon-knobs/register&rsquo;를 import 해주고 스토리를 작성하는 곳에서는 간단하게 addDecorator메서드를 이용해서 구현할 수 있습니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">....
+<span style="color:#fff;font-weight:bold">import</span> { withKnobs, text, <span style="color:#fff;font-weight:bold">boolean</span>, number, object, color} from <span style="color:#0ff;font-weight:bold">&#39;@storybook/addon-knobs&#39;</span>;
+
+....
+storiesOf(<span style="color:#0ff;font-weight:bold">&#39;FileUploader&#39;</span>, module).addDecorator(withKnobs).add(<span style="color:#0ff;font-weight:bold">&#39;FileUploader&#39;</span>,() =&gt;(  
+  &lt;FileUploader text={text(<span style="color:#0ff;font-weight:bold">&#39;placeholder&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;문서 파일을 추가해주세요.&#39;</span>)} <span style="color:#f00">/&gt;  </span>
+  ));
+</code></pre></div>
+<h3 id="info-https-github-com-storybooks-storybook-tree-master-addons-info-https-github-com-storybooks-storybook-tree-master-addons-info"><a href="[https://github.com/storybooks/storybook/tree/master/addons/info](https://github.com/storybooks/storybook/tree/master/addons/info)">Info</a></h3>
+
+<p>컴포넌트에 대한 정보를 자동으로 문서화할 수 있는 addon입니다.</p>
+
+<h4 id="사용방법-1">사용방법</h4>
+
+<p>addons.js에 따로 import하지 않아도 사용할 수 있습니다.<br />
+스토리를 작성하는 곳에서 컴포넌트를 리턴해주는 함수를 withInfo함수로 감싸서 넘겨주면 뷰어 오른쪽 상단에 show info 버튼이 생성됩니다. 이 버튼을 클릭하면 작성한 설명을 비롯해서 소스코드와 prop types 정보를 확인할 수 있습니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">....
+<span style="color:#fff;font-weight:bold">import</span> { withInfo } from <span style="color:#0ff;font-weight:bold">&#39;@storybook/addon-info&#39;</span>;
+
+....
+storiesOf(<span style="color:#0ff;font-weight:bold">&#39;FileUploader&#39;</span>, module).addDecorator(withKnobs).add(<span style="color:#0ff;font-weight:bold">&#39;FileUploader&#39;</span>, withInfo(<span style="color:#0ff;font-weight:bold">`  
+</span><span style="color:#0ff;font-weight:bold">description of the component  
+</span><span style="color:#0ff;font-weight:bold">`</span>)(() =&gt;(  
+  &lt;FileUploader text={text(<span style="color:#0ff;font-weight:bold">&#39;placeholder&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;문서 파일을 추가해주세요.&#39;</span>)} <span style="color:#f00">/&gt;  </span>
+  )));
+</code></pre></div>
+<p>관련된 소스코드는 <a href="https://github.com/hizzins/playground">https://github.com/hizzins/playground</a>에서 확인하실 수 있습니다.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Copyright(c)2019 신희진 All rights reserved. </p>
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Shin Heejin">
+    <meta name="description" content="Heejin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="immer.js"/>
+<meta name="twitter:description" content="리액트의 상태를 불변하게 관리하는데 유용한 라이브러리입니다. 따로 학습할 필요없이 평상시 값을 변경하듯이 변경하는 코드를 produce함수로 감싸주기만 하면 됩니다.
+불변성 먼저 immer.js를 사용하기 전에 불변성이라는 것에 대해 알아야 합니다. 리액트에서는 불변성에 대해 많이 강조합니다. state값이나 props값을 비교하여 값이 변경된 경우에만 컴포넌트를 리렌더링해줍니다. 이때 리액트는 성능을 위해 얕은비교를 통해 값이 변경되었는지를 확인합니다. 참조로 인해 값이 변경되는 경우 값이 변경된 것을 인지하지 못합니다. 따라서 기존의 state의 값을 직접 변경하는 것이 아닌 spread문법 혹은 Object."/>
+
+    <meta property="og:title" content="immer.js" />
+<meta property="og:description" content="리액트의 상태를 불변하게 관리하는데 유용한 라이브러리입니다. 따로 학습할 필요없이 평상시 값을 변경하듯이 변경하는 코드를 produce함수로 감싸주기만 하면 됩니다.
+불변성 먼저 immer.js를 사용하기 전에 불변성이라는 것에 대해 알아야 합니다. 리액트에서는 불변성에 대해 많이 강조합니다. state값이나 props값을 비교하여 값이 변경된 경우에만 컴포넌트를 리렌더링해줍니다. 이때 리액트는 성능을 위해 얕은비교를 통해 값이 변경되었는지를 확인합니다. 참조로 인해 값이 변경되는 경우 값이 변경된 것을 인지하지 못합니다. 따라서 기존의 state의 값을 직접 변경하는 것이 아닌 spread문법 혹은 Object." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/Notes/post/20190531/" /><meta property="article:published_time" content="2019-05-31T16:18:27&#43;09:00"/>
+<meta property="article:modified_time" content="2019-05-31T16:18:27&#43;09:00"/>
+
+
+    
+      <base href="http://localhost:1313/Notes/post/20190531/">
+    
+    <title>
+  immer.js · Hizzin&#39;s Notes
+</title>
+
+    
+      <link rel="canonical" href="http://localhost:1313/Notes/post/20190531/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="" media="screen">
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.49.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://localhost:1313/Notes/">
+      Hizzin&#39;s Notes
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://localhost:1313/Notes/post/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hizzins.github.io/playground">Playground</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  
+<section class="container page">
+  <article>
+    <header>
+      <ul id="tags">
+        
+          
+          
+            <li><a href="http://localhost:1313/Notes/tags/immer.js/">immer.js</a></li>
+          
+        
+          
+          
+            <li><a href="http://localhost:1313/Notes/tags/immutable/">immutable</a></li>
+          
+        
+          
+          
+        
+      </ul>
+      <h1>immer.js</h1>
+    </header>
+
+    
+
+<p>리액트의 상태를 불변하게 관리하는데 유용한 라이브러리입니다.
+따로 학습할 필요없이 평상시 값을 변경하듯이 변경하는 코드를 produce함수로 감싸주기만 하면 됩니다.</p>
+
+<h2 id="불변성">불변성</h2>
+
+<p>먼저 immer.js를 사용하기 전에 불변성이라는 것에 대해 알아야 합니다.
+리액트에서는 불변성에 대해 많이 강조합니다.
+state값이나 props값을 비교하여 값이 변경된 경우에만 컴포넌트를 리렌더링해줍니다. 이때 리액트는 성능을 위해 얕은비교를 통해 값이 변경되었는지를 확인합니다.  참조로 인해 값이 변경되는 경우 값이 변경된 것을 인지하지 못합니다. 따라서 기존의 state의 값을 직접 변경하는 것이 아닌 spread문법 혹은 Object.assign등을 이용해 만든 새로운 객체를 setState해줘야 합니다. <u>얕은 비교를 위한 깊은 복사입니다. </u>단순한 데이터구조에서는 이를 쉽게 구현할 수 있습니다.
+그러나 복잡한 형태의 depth가 깊은 데이터 구조에서는 상당히 번거로운 작업이 됩니다.</p>
+
+<h2 id="사용방법">사용방법</h2>
+
+<p>사용방법은 먼저 immer를 설치하고 produce를 import합니다.
+produce로 감싼 함수에서 받은 draft의 값을 변경해주기만 하면 됩니다.
+produce로 감싸기만 하면 일반적으로 값을 변경하듯이 쉽게 사용할 수 있습니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#fff;font-weight:bold">import</span> produce from <span style="color:#0ff;font-weight:bold">&#39;immer&#39;</span>;
+...
+<span style="color:#fff;font-weight:bold">const</span> nextState = produce(state, draft =&gt; {  
+  draft.list.push(newItem);  
+});
+...
+</code></pre></div>
+<p>리듀서에서의 사용예 입니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#fff;font-weight:bold">export</span> <span style="color:#fff;font-weight:bold">default</span> handleActions({   
+  [UPDATE_LIST]: (state, action) =&gt; 
+    produce(state, draft =&gt; {  
+      draft.list.push(action.payload.item);  
+    }) 
+}, initialState);
+</code></pre></div>
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Copyright(c)2019 신희진 All rights reserved. </p>
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+
+</html>

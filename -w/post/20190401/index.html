@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Shin Heejin">
+    <meta name="description" content="Heejin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git rebase로 작성자 수정하기"/>
+<meta name="twitter:description" content="git rebase git의 커밋 이력을 관리 할 수 있는 git rebase에 대해 정리해 보려고 합니다. git rebase는 이미 커밋한 메세지를 수정한다거나, 사소한 커밋이 여러번 발생된 경우 하나의 커밋으로 merge시킨다거나 혹은 작성자를 잘못 커밋한 경우 수정변경하는데 사용할 수 있어요.
+이중에서 오늘은 작성자를 잘못 커밋한 경우에 대해 수정하는 방법을 정리해 보려고 해요. git에는 얼마나 커밋하며 활동했는지를 한눈에 볼 수 있는 초록색 도장이 찍혀있는 표가 있는데 작성자를 해당 프로젝트의 계정이 아닌 다른 계정으로 커밋할 경우 이 초록색 도장이 찍히지 않아요."/>
+
+    <meta property="og:title" content="git rebase로 작성자 수정하기" />
+<meta property="og:description" content="git rebase git의 커밋 이력을 관리 할 수 있는 git rebase에 대해 정리해 보려고 합니다. git rebase는 이미 커밋한 메세지를 수정한다거나, 사소한 커밋이 여러번 발생된 경우 하나의 커밋으로 merge시킨다거나 혹은 작성자를 잘못 커밋한 경우 수정변경하는데 사용할 수 있어요.
+이중에서 오늘은 작성자를 잘못 커밋한 경우에 대해 수정하는 방법을 정리해 보려고 해요. git에는 얼마나 커밋하며 활동했는지를 한눈에 볼 수 있는 초록색 도장이 찍혀있는 표가 있는데 작성자를 해당 프로젝트의 계정이 아닌 다른 계정으로 커밋할 경우 이 초록색 도장이 찍히지 않아요." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/Notes/post/20190401/" /><meta property="article:published_time" content="2019-04-01T11:13:26&#43;09:00"/>
+<meta property="article:modified_time" content="2019-04-01T11:13:26&#43;09:00"/>
+
+
+    
+      <base href="http://localhost:1313/Notes/post/20190401/">
+    
+    <title>
+  git rebase로 작성자 수정하기 · Hizzin&#39;s Notes
+</title>
+
+    
+      <link rel="canonical" href="http://localhost:1313/Notes/post/20190401/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="http://localhost:1313/Notes/" media="screen">
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.49.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://localhost:1313/Notes/">
+      Hizzin&#39;s Notes
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://localhost:1313/Notes/post/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hizzins.github.io/playground">Playground</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  
+<section class="container page">
+  <article>
+    <header>
+      <ul id="tags">
+        
+      </ul>
+      <h1>git rebase로 작성자 수정하기</h1>
+    </header>
+
+    
+
+<h1 id="git-rebase">git rebase</h1>
+
+<p>git의 커밋 이력을 관리 할 수 있는 git rebase에 대해 정리해 보려고 합니다.
+git rebase는 이미 커밋한 메세지를 수정한다거나, 사소한 커밋이 여러번 발생된 경우 하나의 커밋으로 merge시킨다거나 혹은 작성자를 잘못 커밋한 경우 수정변경하는데 사용할 수 있어요.</p>
+
+<p>이중에서 오늘은 작성자를 잘못 커밋한 경우에 대해 수정하는 방법을 정리해 보려고 해요.
+git에는 얼마나 커밋하며 활동했는지를 한눈에 볼 수 있는 초록색 도장이 찍혀있는 표가 있는데 작성자를 해당 프로젝트의 계정이 아닌 다른 계정으로 커밋할 경우 이 초록색 도장이 찍히지 않아요.
+물론  이 초록색 도장이 그 사람의 실력을 말해주는 것은 아니지만 적어도 그 사람에게 있어 개발에 대한 성실도? 정도는 표현해 주는 표라 생각되므로 잘못 커밋한 내역의 초록색 도장을 살려내는 방법을 소개해 볼게요.</p>
+
+<h3 id="rebase-실행">rebase 실행</h3>
+
+<p>rebase대상 커밋의 바로 이전 커밋으로 rebase 명령어를 입력합니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$ git rebase -i -p &lt;commit hash&gt;
+</code></pre></div>
+<p><img src="https://user-images.githubusercontent.com/43326846/53309514-992f6180-38eb-11e9-8cc5-56cc5d3ca5db.png" alt="enter image description here" /></p>
+
+<blockquote>
+<p>commit hash는 $git log를 통해서나 소스트리에 보면 커밋컬럼에서 알 수 있어요.</p>
+</blockquote>
+
+<h3 id="edit모드로-저장">edit모드로 저장</h3>
+
+<p>pick으로 되어 있는 리스트들이 rebase대상이에요.
+<img src="https://user-images.githubusercontent.com/43326846/53309525-a0566f80-38eb-11e9-8440-793026d57281.png" alt="enter image description here" /></p>
+
+<p>vim을 편집모드로 전환 후 pick -&gt; edit로 변경후 명령모드에서 :wq 명령어로 저장합니다.
+<img src="https://user-images.githubusercontent.com/43326846/53310123-d0534200-38ee-11e9-86a1-d106d27cde15.png" alt="enter image description here" /></p>
+
+<blockquote>
+<p>vim화면에서 명령어모드에서는 아무리 글자를 써도 수정이 되지 않아요. 편집모드로 변경하는 단축키로 편집모드로 전환 후 수정해주세요.(windows 편집모드: insert키, mac 편집모드: i)
+편집모드에서 명령어 모드로 전환은 esc키로 가능.</p>
+</blockquote>
+
+<h3 id="커밋로그의-작성자-변경">커밋로그의 작성자 변경</h3>
+
+<p>아래의 명령어로 커밋로그의 작성자를 변경해줍니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$git commit --amend --author=<span style="color:#0ff;font-weight:bold">&#34;작성자이름 &lt;작성자 이메일&gt;&#34;</span>
+</code></pre></div>
+<p>커밋로그에 순차적으로 하나씩 적용됨으로 작성자를 수정한 후에 아래 명령어를 실행하면 다음 커밋로그가 target이 되고 다시 작성자 변경하는 명령어를 실행합니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$git rebase --<span style="color:#fff;font-weight:bold">continue</span>
+</code></pre></div>
+<p>모든 rebase대상이 완료되면 아래와 같이 코멘트가 나옵니다.
+<img src="https://user-images.githubusercontent.com/43326846/53309596-2672b600-38ec-11e9-82cc-df9d8dfaf1d0.png" alt="enter image description here" /></p>
+
+<h3 id="원격저장소에-push">원격저장소에 push</h3>
+
+<p>마지막으로 원격저장소에 강제 push를 하게 되면 수정된 내용이 반영됩니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$git push origin +master
+</code></pre></div>
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Copyright(c)2019 신희진 All rights reserved. </p>
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+
+</html>

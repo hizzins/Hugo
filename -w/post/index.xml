@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hizzin&#39;s Notes</title>
+    <link>http://localhost:1313/Notes/post/</link>
+    <description>Recent content in Posts on Hizzin&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 29 Oct 2019 09:12:02 +0900</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/Notes/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sass(2)</title>
+      <link>http://localhost:1313/Notes/post/20191029/</link>
+      <pubDate>Tue, 29 Oct 2019 09:12:02 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20191029/</guid>
+      <description>앞서 sass의 문법들을 살펴보았는데요, 이제 본격적으로 테마스타일을 sass가 제공하는 문법들을 사용해서 구현해 보도록하겠습니다. 먼저 테마의 종류를 정의해 줍니다. 저는 이름 짓기 어려운 관계로 theme에 번호를 붙여서 만들도록 하겠습니다.
+$themes: (theme01, theme02, theme03, theme04, theme05, theme06, theme07, theme08, theme09, theme10, theme11); 그리고 테마의 배경색상(\$background-color)과 폰트색상(\$color)도 지정해 줍니다.
+$color: (&amp;#34;theme01&amp;#34;: #484848, &amp;#34;theme02&amp;#34;: #2a5875, &amp;#34;theme03&amp;#34;:#fff, &amp;#34;theme04&amp;#34;:#fff, &amp;#34;theme05&amp;#34;:#fff, &amp;#34;theme06&amp;#34;:#484848, &amp;#34;theme07&amp;#34;:#484848, &amp;#34;theme08&amp;#34;:#2e5475, &amp;#34;theme09&amp;#34;: #d4f8ff, &amp;#34;theme10&amp;#34;: #484848, &amp;#34;theme11&amp;#34;: #ffffd7); $background-color (&amp;#34;theme01&amp;#34;: #fff, &amp;#34;theme02&amp;#34;: #2a5875, &amp;#34;theme03&amp;#34;:#96fffe, &amp;#34;theme04&amp;#34;:#fff, &amp;#34;theme05&amp;#34;:#262626, &amp;#34;theme06&amp;#34;:#fffcde, &amp;#34;theme07&amp;#34;:#d5fff6, &amp;#34;theme08&amp;#34;:#fff, &amp;#34;theme09&amp;#34;: #d4f8ff, &amp;#34;theme10&amp;#34;: #fff, &amp;#34;theme11&amp;#34;: #fff) 이제 해당테마에 스타일을 적용하는 코드를 작성해 보겠습니다.</description>
+    </item>
+    
+    <item>
+      <title>Sass(1)</title>
+      <link>http://localhost:1313/Notes/post/20191008/</link>
+      <pubDate>Tue, 08 Oct 2019 11:40:17 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20191008/</guid>
+      <description>sass는 오래전부터 사용해왔지만 늘 사용하는 문법만 써서 이번에 새로운 방법을 시도해 보는중 전체적으로 정리가 필요해서 글을 작성하게 되었습니다. 이번 장에서는 기본 사용법에 대해 다음장에서는 함수를 이용한 테마구현 이렇게 두번에 나눠 정리를 해보고자 합니다.
+기본 사용서 Variables 반복되는 값 또는 상징적인 값들을 variable로 만들어서 사용합니다. 사이트에서 주로 사용하는 컬러값이나 폰트크기같은 값들을 변수에 담아서 사용합니다. 아래와 같이 변수들을 작성한 파일을 variables.scss로 만들고 여러 sass파일에서 변수들을 사용할 수 있도록 main.scss에서 먼저 import해줍니다.</description>
+    </item>
+    
+    <item>
+      <title>immer.js</title>
+      <link>http://localhost:1313/Notes/post/20190531/</link>
+      <pubDate>Fri, 31 May 2019 16:18:27 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20190531/</guid>
+      <description>리액트의 상태를 불변하게 관리하는데 유용한 라이브러리입니다. 따로 학습할 필요없이 평상시 값을 변경하듯이 변경하는 코드를 produce함수로 감싸주기만 하면 됩니다.
+불변성 먼저 immer.js를 사용하기 전에 불변성이라는 것에 대해 알아야 합니다. 리액트에서는 불변성에 대해 많이 강조합니다. state값이나 props값을 비교하여 값이 변경된 경우에만 컴포넌트를 리렌더링해줍니다. 이때 리액트는 성능을 위해 얕은비교를 통해 값이 변경되었는지를 확인합니다. 참조로 인해 값이 변경되는 경우 값이 변경된 것을 인지하지 못합니다. 따라서 기존의 state의 값을 직접 변경하는 것이 아닌 spread문법 혹은 Object.</description>
+    </item>
+    
+    <item>
+      <title>Storybook (for React)</title>
+      <link>http://localhost:1313/Notes/post/20190517/</link>
+      <pubDate>Fri, 17 May 2019 01:43:11 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20190517/</guid>
+      <description>스토리북은 단순히 UI템플릿을 보여주는 데모페이지가 아닌 UI테스트부터 문서화까지 다양한 기능들이 제공되어 보다 쾌적한 컴포넌트 개발환경을 만들어주는 도구입니다. 스토리북을 사용할때는 처음 컴포넌트 작성할때부터 props로만 UI를 그릴 수 있는 의존성이 없는 독립적인 컴포넌트로 설계하여 구현하도록 합니다.
+ 스토리북이 지원하는 프레임워크 목록
+ 작업 준비  먼저 아래 명령어로 리액트 프로젝트를 만들어주세요
+npx create-react-app storybook   npx명령어는 npm v5.2.0이상에서 사용할 수 있으며,
+패키지를 설치하지 않고 실행만 시킬 수 있다. nvm, n 처럼 node 버전관리를 할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>전각과 반각(일본어)</title>
+      <link>http://localhost:1313/Notes/post/20190421/</link>
+      <pubDate>Mon, 22 Apr 2019 09:35:59 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20190421/</guid>
+      <description>일본어 작업을 할때 알아두면 좋을 반각, 전각에 대해서 알아보도록 하겠습니다.
+한자 문화권의 타이포그래피에서는 전각과 반각의 개념이 존재합니다. 전각(Full-width)은 정사각형 형태, 반각(Half-width)은 전각의 가로폭을 반으로 줄인 직사각형 형태라고 해서 이름에서부터 나타나듯이 같은 숫자라도 반각은 123456789으로 표현되며 전각은 １２３４５６７８９로 넓게 표현됩니다. 보기에는 사이즈만 다르고 같은 숫자로 보이지만 사실상 전각은 문자로 인식됩니다.
+따라서 숫자를 입력하는 input창 같은 곳에서는 전각으로 숫자를 입력시 일반 숫자(반각)로 변환해주는 작업이 반드시 필요합니다.
+ 한자와 히라가나, 한글은 언제나 전각 문자에 속한다.</description>
+    </item>
+    
+    <item>
+      <title>Hugo 블로그 만들기</title>
+      <link>http://localhost:1313/Notes/post/20190403/</link>
+      <pubDate>Wed, 03 Apr 2019 14:50:24 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20190403/</guid>
+      <description>Hugo 설치하기  hugo github에서 설치파일 다운로드 및 설치해 주세요. 다운로드 받은 hugo 파일(hugo.exe, README.md, LICENSE.md들을 C:\Hugo\bin 디렉토리 생성후 넣어주세요. 어느 위치에서나 Hugo가 실행될 수 있도록$ set PATH=%PATH%;C:\Hugo\bin 명령으로 환경변수에 C:\Hugo\bin을 추가해 줍니다. $ hugo version 혹은 $ hugo help 명령어로 hugo가 잘 설치됐는지 확인할 수 있어요.  프로젝트 만들기  C:\Hugo에서 $ hugo new site &amp;lt;project&amp;gt; 명령어를 치면 으로 생성된 폴더를 확인할 수 있어요.
+ 폴더의 구조는 아래처럼 자동으로 생성이 됩니다.</description>
+    </item>
+    
+    <item>
+      <title>git rebase로 작성자 수정하기</title>
+      <link>http://localhost:1313/Notes/post/20190401/</link>
+      <pubDate>Mon, 01 Apr 2019 11:13:26 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20190401/</guid>
+      <description>git rebase git의 커밋 이력을 관리 할 수 있는 git rebase에 대해 정리해 보려고 합니다. git rebase는 이미 커밋한 메세지를 수정한다거나, 사소한 커밋이 여러번 발생된 경우 하나의 커밋으로 merge시킨다거나 혹은 작성자를 잘못 커밋한 경우 수정변경하는데 사용할 수 있어요.
+이중에서 오늘은 작성자를 잘못 커밋한 경우에 대해 수정하는 방법을 정리해 보려고 해요. git에는 얼마나 커밋하며 활동했는지를 한눈에 볼 수 있는 초록색 도장이 찍혀있는 표가 있는데 작성자를 해당 프로젝트의 계정이 아닌 다른 계정으로 커밋할 경우 이 초록색 도장이 찍히지 않아요.</description>
+    </item>
+    
+  </channel>
+</rss>

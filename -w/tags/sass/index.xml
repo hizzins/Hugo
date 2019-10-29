@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sass on Hizzin&#39;s Notes</title>
+    <link>http://localhost:1313/Notes/tags/sass/</link>
+    <description>Recent content in Sass on Hizzin&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Oct 2019 11:40:17 +0900</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/Notes/tags/sass/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sass(1)</title>
+      <link>http://localhost:1313/Notes/post/20191008/</link>
+      <pubDate>Tue, 08 Oct 2019 11:40:17 +0900</pubDate>
+      
+      <guid>http://localhost:1313/Notes/post/20191008/</guid>
+      <description>sass는 오래전부터 사용해왔지만 늘 사용하는 문법만 써서 이번에 새로운 방법을 시도해 보는중 전체적으로 정리가 필요해서 글을 작성하게 되었습니다. 이번 장에서는 기본 사용법에 대해 다음장에서는 함수를 이용한 테마구현 이렇게 두번에 나눠 정리를 해보고자 합니다.
+기본 사용서 Variables 반복되는 값 또는 상징적인 값들을 variable로 만들어서 사용합니다. 사이트에서 주로 사용하는 컬러값이나 폰트크기같은 값들을 변수에 담아서 사용합니다. 아래와 같이 변수들을 작성한 파일을 variables.scss로 만들고 여러 sass파일에서 변수들을 사용할 수 있도록 main.scss에서 먼저 import해줍니다.</description>
+    </item>
+    
+  </channel>
+</rss>
